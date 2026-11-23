@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Project Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="card">
+        <h1>First Project Flask</h1>
+        <img class="gambar" src="https://upload.wikimedia.org/wikipedia/en/9/97/Barbie_-_Big_City%2C_Big_Dreams.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled.jpg" alt="Barbie" class="gambar">
+        <form method="POST" action="/">
+            <label for="nama">Masukkan nama:</label>
+            <input type="text" id="nama" name="nama" placeholder="Ketik nama kamu" required>
+            <button type="submit">Kirim</button>
+        </form>
+
+        {% if nama %}
+        <p class="hasil">Halo, {{ nama }}! Data berhasil dikirim dengan method POST.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
